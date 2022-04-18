@@ -31,42 +31,19 @@
             height: 100%;
         }
 
-
-
-        /* .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      } */
-
         .img-card,
-        .movie-card {
-            transition-timing-function: ease;
+        .movie-card,
+        .star-card,
+        .star-detail-card {
+            transition: transform 100ms ease-in;
+	        cursor: pointer;
         }
 
-        .movie-card:hover {
-            cursor: pointer;
-            width: 203px;
-            height: 305px;
-        }
-
-        .img-card:hover {
-            cursor: pointer;
-            width: 195px;
-            height: 209px;
-        }
-
+        .img-card:hover,
+        .movie-card:hover,
+        .star-card:hover,
         .star-detail-card:hover {
-            cursor: pointer;
-            width: 178px;
-            height: 178px;
-        }
-
-        .star-card:hover {
-            cursor: pointer;
-            width: 205px;
-            height: 205px;
+            transform: scale(0.95);
         }
 
         .carousel .carousel-item {
