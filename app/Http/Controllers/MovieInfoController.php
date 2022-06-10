@@ -39,6 +39,8 @@ class MovieInfoController extends Controller
             $casts = Http::get('https://api.themoviedb.org/3/movie/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('cast');
         } elseif (Http::get('https://api.themoviedb.org/3/movie/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('crew')) {
             $casts = Http::get('https://api.themoviedb.org/3/movie/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('crew');
+        } else {
+            $casts = '';
         }
 
         $trailers = Http::get('https://api.themoviedb.org/3/movie/' . $id . '/videos?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('results');
@@ -69,6 +71,8 @@ class MovieInfoController extends Controller
             $casts = Http::get('https://api.themoviedb.org/3/tv/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('cast');
         } elseif (Http::get('https://api.themoviedb.org/3/tv/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('crew')) {
             $casts = Http::get('https://api.themoviedb.org/3/tv/' . $id . '/credits?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('crew');
+        } else {
+            $casts = '';
         }
 
         $trailers = Http::get('https://api.themoviedb.org/3/tv/' . $id . '/videos?api_key=fd5079575b161f2a4e700c8b8548161e&language=en-US')->json('results');
