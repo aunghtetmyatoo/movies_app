@@ -36,7 +36,7 @@
         .star-card,
         .star-detail-card {
             transition: transform 100ms ease-in;
-	        cursor: pointer;
+            cursor: pointer;
         }
 
         .img-card:hover,
@@ -81,6 +81,12 @@
             }
         }
 
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (max-width: 992px) {
+            .carousel .carousel-item {
+                height: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -118,104 +124,12 @@
         </div>
     </nav>
     @yield('content')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 5,
-            spaceBetween: 30,
-            autoplay: {
-                delay: 5500,
-                disableOnInteraction: false,
-            },
-            loop: false,
-            loopFillGroupWithBlank: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        var swiper = new Swiper(".mySwiper-cast", {
-            slidesPerView: 4,
-            spaceBetween: 15,
-            autoplay: {
-                delay: 5500,
-                disableOnInteraction: false,
-            },
-            loop: false,
-            loopFillGroupWithBlank: false,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-        var swiper = new Swiper(".mySwiper-trailer", {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            loop: false,
-            loopFillGroupWithBlank: false,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-        let stars = document.querySelector('.stars');
-        let stars_infScroll = new InfiniteScroll(stars, {
-            // options
-            path: '/stars/page/@{{#}}',
-            append: '.col',
-            history: true,
-            status: '.page-load-status',
-
-        });
-        let movies = document.querySelector('.movies');
-        let movies_infScroll = new InfiniteScroll(movies, {
-            // options
-            path: '/movies/page/@{{#}}',
-            append: '.col',
-            history: true,
-            status: '.page-load-status',
-
-        });
-        let tv_shows = document.querySelector('.tv_shows');
-        let tv_shows_infScroll = new InfiniteScroll(tv_shows, {
-            // options
-            path: '/tv_shows/page/@{{#}}',
-            append: '.col',
-            history: true,
-            status: '.page-load-status',
-
-        });
-
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 20 ||
-                document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ URL::asset('js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
 
