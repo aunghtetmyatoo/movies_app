@@ -4,11 +4,11 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="col-4 p-5 float-start">
+        <div class="movie-detail-img col-lg-4 col-md-12 col-sm-12 p-5 float-start">
             <img src="https://image.tmdb.org/t/p/w500/{{ $detail['poster_path'] }}" class="w-100 rounded" alt="">
         </div>
-        <div class="col-7 pt-5 float-start text-white">
-            <h1 class="text-white">{{ $detail['original_title'] }}</h1>
+        <div class="movie-detail-info col-lg-7 col-md-12 col-sm-12 pt-5 pb-5 float-start text-white">
+            <h1 class="text-white col-12">{{ $detail['original_title'] }}</h1>
             <i class="fa-solid fa-star text-warning"></i><span class="m-2">{{ $detail['vote_average'] }}</span>
             @foreach ($detail['genres'] as $genre)
                 | {{ $genre['name'] }}
@@ -49,7 +49,7 @@
 
 
 
-            <div class="trailer mt-5 mb-5">
+            <div class="trailer mt-5">
                 @if ($trailers)
                     <h3 class="text-warning fw-bold mb-3">Trailers</h3>
                     <div class="swiper mySwiper-trailer rounded">

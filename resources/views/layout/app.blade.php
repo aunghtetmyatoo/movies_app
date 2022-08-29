@@ -86,6 +86,14 @@
             .carousel .carousel-item {
                 height: 100%;
             }
+
+            .movie-detail-img, .tv-detail-img, .star-detail-img {
+                padding: 1rem 0.5rem 0 !important;
+            }
+            .movie-detail-info, .tv-detail-info, .star-detail-info {
+                width: 100%;
+                padding: 3rem 0.5rem 1rem !important;
+            }
         }
     </style>
 </head>
